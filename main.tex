@@ -1,0 +1,128 @@
+\documentclass[10pt,landscape,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=0.4in]{geometry}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{hyperref}
+\usepackage{microtype}
+
+% Custom Colors
+\definecolor{headerblue}{RGB}{24, 43, 73}
+\definecolor{rowaccent}{RGB}{245, 247, 250}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=headerblue,
+    urlcolor=headerblue
+}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% \begin{center}
+%     {\LARGE \bfseries Comprehensive Taxonomy of On-Device Edge AI Models}\\[4pt]
+%     {\large Fully Offline Execution, Hardware Requirements, Quantization, and Real-World Use Cases}
+% \end{center}
+
+% \vspace{10pt}
+
+% \small
+% \rowcolors{2}{rowaccent}{white}
+% \begin{longtable}{p{2.6cm} p{1.6cm} p{1.6cm} p{2.2cm} p{2.6cm} p{4.2cm} p{7.5cm}}
+%     \hline
+%     \rowcolor{headerblue}
+%     \color{white}\textbf{Model / Provider} & 
+%     \color{white}\textbf{Access Type} & 
+%     \color{white}\textbf{Parameter Size} & 
+%     \color{white}\textbf{Quantization / Precision} & 
+%     \color{white}\textbf{RAM / Storage Footprint} & 
+%     \color{white}\textbf{Target Hardware Tier} & 
+%     \color{white}\textbf{Primary Offline Use Cases} \\
+%     \hline
+%     \endhead
+
+%     \textbf{Tiny Aya / Aya 23} \newline \textit{(Cohere Labs)} & Open Weight & 3.35B / 8B & INT4 / GGUF & 2.4 GB -- 5.2 GB RAM / 2.2--4.8 GB Disk & AI Laptops, High-end Edge Gateways, Mobile via llama.cpp & Deep multilingual translation, global localized agents, cross-lingual offline summarization across 70+ languages. \\
+
+%     \textbf{Cohere Transcribe} \newline \textit{(Cohere)} & Open Weight & 2B & INT8 / FP16 & 1.8 GB -- 2.4 GB RAM / 2.0 GB Disk & Edge Servers, Field Workstations, Mobile NPUs & Offline real-time automatic speech recognition (ASR) across 14 languages for secure localized transcription. \\
+
+%     \textbf{Apple Intelligence Model} & Closed (OS) & 3.0B & Mixed 3-bit/4-bit & $\sim$2.5--3.0 GB RAM / $\sim$2.8 GB Disk & Apple Silicon (A17 Pro, A18+, M-Series) & Siri task orchestration, writing tools, notification prioritization, Smart Reply, local photo indexing. \\
+    
+%     \textbf{Gemini Nano (v1/v2)} & Closed (OS) & 1.8B -- 3.2B & INT4 Quantized & $\sim$3.0--4.0 GB RAM / $\sim$2.6 GB Disk & Google Tensor (G3--G6), Snapdragon 8 Gen 3+ & Gboard Smart Reply, Voice Recorder live transcription/summarization, Magic Compose, system safety checks. \\
+    
+%     \textbf{Llama 3.2 Mobile} \newline \textit{(Meta)} & Open Weight & 1B \& 3B & INT4 / Q4\_K\_M & 1.2 GB -- 2.8 GB RAM / 1.5--3.2 GB Disk & Smartphones (Snapdragon 8 series, Dimensity 9000+) & Offline general chat, local tool calling, task automation agents, field document summarization. \\
+
+%     \textbf{Mistral NeMo Mini / Ministry} \newline \textit{(Mistral AI)} & Open Weight & 3B -- 8B & INT4 / GGUF & 2.5 GB -- 5.5 GB RAM / 2.8--5.0 GB Disk & AI Laptops, Edge Gateways, Flagship Mobile & Offline enterprise RAG, high-precision function calling, code generation, local compliance automation. \\
+    
+%     \textbf{MobileLLM / Pro} \newline \textit{(Meta Research)} & Open Weight & 125M -- 1B & INT4 / INT8 & 0.4 GB -- 1.2 GB RAM / 0.5--1.1 GB Disk & Smart wearables, ultra-low-power IoT, budget phones & Real-time text parsing, contextual ambient awareness, voice UI command execution on micro-devices. \\
+    
+%     \textbf{Gemma 2 / Gemma 3n} \newline \textit{(Google)} & Open Weight & 1B, 2B, 4B & INT4 (LiteRT) & 1.0 GB -- 3.2 GB RAM / 1.4--3.5 GB Disk & Android/iOS smartphones via LiteRT-LM & Lightweight mobile assistants, local offline search, edge RAG (Retrieval-Augmented Generation). \\
+    
+%     \textbf{Qwen 2.5 / Qwen 3} \newline \textit{(Alibaba)} & Open Weight & 0.5B, 1.5B, 3B & INT4 / GGUF & 0.8 GB -- 2.8 GB RAM / 0.9--3.0 GB Disk & Cross-platform (Android, iOS, Raspberry Pi 5) & High-accuracy offline multilingual translation, mobile code completion, non-English agent tools. \\
+    
+%     \textbf{Phi-3.5 / Phi-4 Mini} \newline \textit{(Microsoft)} & Open Weight & 3.8B & INT4 (ONNX / GGUF) & 3.0 GB -- 3.8 GB RAM / 3.4 GB Disk & AI Laptops, High-end Smartphones, Edge Gateways & Structured JSON generation, complex offline logical reasoning, mathematical problem solving. \\
+    
+%     \textbf{SmolLM2} \newline \textit{(Hugging Face)} & Open Weight & 135M, 360M, 1.7B & INT4 / INT8 & 0.3 GB -- 1.4 GB RAM / 0.4--1.6 GB Disk & Entry-level phones (4GB total RAM), Embedded systems & High-speed token generation (40+ tok/s), background text classification, low-latency mobile text utilities. \\
+
+%     \textbf{Liquid LFM2-24B (A2B)} \newline \textit{(Liquid AI)} & Open Weight & 24B (2.3B Active) & INT4 / Hybrid MoE & $\sim$2.0--3.5 GB Active RAM & High-end Edge Gateways, Jetson Orin, Flagship Devices & Fast, memory-efficient long-context processing on edge hardware without high power draw. \\
+    
+%     \textbf{Desert Ant Micro-SDKs} & Commercial SDK & 2M -- 400M & Custom Quantized & 50 MB -- 500 MB RAM / 2--400 MB Disk & Core ML / LiteRT Native Mobile Runtimes & Specialized micro-tasks: local PII redaction (Redact), offline speech-to-text (Voz), photo scoring (Eye), audio denoise. \\
+    
+%     \textbf{Picovoice Porcupine / Eagle} & Closed SDK & $<$10M & Custom Micro-Weights & $<$50 MB RAM / 2--15 MB Disk & Microcontrollers, Mobile CPUs, DSPs & Always-on wake-word detection, local voice intent classification, offline acoustic speaker recognition. \\
+
+%     \textbf{Whisper Tiny / Base} \newline \textit{(OpenAI / CTranslate2)} & Open Weight & 39M -- 74M & INT8 / FP16 & 150 MB -- 400 MB RAM / 100--200 MB Disk & Mobile devices, Raspberry Pi, Single-board PCs & Completely offline continuous voice-to-text dictation, meeting transcription on edge. \\
+    
+%     \hline
+% \end{longtable}
+
+
+\begin{longtable}{p{2.6cm} p{1.6cm} p{1.8cm} p{2.2cm} p{2.6cm} p{4.2cm} p{6.8cm}}
+    \hline
+    \rowcolor{headerblue}
+    \color{white}\textbf{Model / Provider} & 
+    \color{white}\textbf{Access Type} & 
+    \color{white}\textbf{Mobile Size / Quantization} & 
+    \color{white}\textbf{Smartphone RAM Footprint} & 
+    \color{white}\textbf{Minimum Hardware Specs} & 
+    \color{white}\textbf{Example Smartphone \& Approx. Price Range} & 
+    \color{white}\textbf{Primary Mobile Offline Use Cases} \\
+    \hline
+    \endhead
+
+    \textbf{\href{https://cohere.com/transcribe}{Cohere Transcribe}} \newline \textit{(Cohere)} & Open Weight & 2B \newline (INT8 / FP16) & 1.8 GB -- 2.4 GB RAM & Octa-core CPU / Mobile NPU, 6GB+ total RAM & \textbf{Pixel 7a / Galaxy A55} \newline \textit{(\$300 -- \$400)} & Real-time offline speech recognition (ASR) across 14 languages, voice dictation. \\
+
+    \textbf{\href{https://docs.cohere.com/docs/tiny-aya}{Tiny Aya}} \newline \textit{(Cohere Labs)} & Open Weight & 3.3B / 3B Active \newline (INT4 GGUF) & 2.2 GB -- 3.0 GB RAM & Snapdragon 8 Gen 2/3, Dimensity 9200+, 8GB RAM & \textbf{Poco F6 Pro / OnePlus 12R} \newline \textit{(\$380 -- \$500)} & High-speed multilingual translation across 70+ languages. \\
+
+    \textbf{\href{https://developer.apple.com/apple-intelligence/}{Apple Intelligence Model}} & Closed (OS) & 3.0B \newline (Mixed 3b/4b) & $\sim$2.5--3.0 GB RAM \newline (Reserved) & Apple A17 Pro / A18 chip, 16-core NPU, 8GB total RAM & \textbf{iPhone 15 Pro / iPhone 16} \newline \textit{(\$799 -- \$999)} & On-device Siri AI orchestration, offline Smart Reply, notification summaries, writing tools, local photo indexing. \\
+
+    \textbf{\href{https://store.google.com/us/magazine/gemini-nano-offline?hl=en-US}{Gemini Nano (v1/v2)}} & Closed (OS) & 1.8B -- 3.2B \newline (INT4) & $\sim$3.0--4.0 GB RAM \newline (System AICore) & Google Tensor G3--G6 or Snapdragon 8 Gen 3/Elite & \textbf{Google Pixel 8a / Pixel 9 / Galaxy S24} \newline \textit{(\$499 -- \$799)} & Gboard Smart Reply, local Voice Recorder live transcription/summarization, Magic Compose, call assistant tools. \\
+
+    \textbf{\href{https://huggingface.co/HuggingFaceTB/SmolLM2-1.7B-Instruct}{SmolLM2}} \newline \textit{(Hugging Face)} & Open Weight & 135M / 360M / 1.7B \newline (INT4 / Q4\_K\_M) & 0.3 GB -- 1.4 GB RAM & Octa-core CPU / low-tier NPU, 4GB total RAM & \textbf{Budget Android} \newline \textit{(e.g., Galaxy A15, Moto G Power, \$150 -- \$250)} & Ultra-fast token generation ($40+$ tok/s) on entry-level phones, offline text classification, background utility scripts. \\
+
+    \textbf{\href{https://huggingface.co/meta-llama/Llama-3.2-3B-Instruct}{Llama 3.2 Mobile}} \newline \textit{(Meta)} & Open Weight & 1B \& 3B \newline (INT4 / Q4\_K\_M) & 1.2 GB -- 2.8 GB RAM & Snapdragon 8 Gen 2+, Dimensity 9200+, 6GB+ RAM & \textbf{Poco F6 / Xiaomi 13T / Galaxy S23} \newline \textit{(\$350 -- \$550)} & Offline mobile assistants, document summarization, private offline note querying. \\
+
+    \textbf{\href{https://huggingface.co/Qwen/Qwen2.5-3B-Instruct-GGUF}{Qwen 2.5 / Qwen 3}} \newline \textit{(Alibaba)} & Open Weight & 0.5B / 1.5B / 3B \newline (INT4 / GGUF) & 0.8 GB -- 2.8 GB RAM & Quad/Octa-core CPU, ARM NPU, 4GB--6GB total RAM & \textbf{Nothing Phone (2a) / Redmi Note 13 Pro} \newline \textit{(\$250 -- \$380)} & High-accuracy offline multilingual translation across 29+ languages, non-English mobile assistants, code generation. \\
+
+    \textbf{\href{https://ai.google.dev/gemma}{Gemma 2 / Gemma 3n}} \newline \textit{(Google)} & Open Weight & 1B / 2B / 4B \newline (INT4 LiteRT) & 1.0 GB -- 3.2 GB RAM & LiteRT-LM framework, Snapdragon / MediaTek NPU & \textbf{Google Pixel 7a / Motorola Edge 50} \newline \textit{(\$300 -- \$450)} & Mobile search indexing, local RAG over personal notes, offline conversational agent workflows. \\
+
+    \textbf{\href{https://huggingface.co/microsoft/Phi-3.5-mini-instruct}{Phi-3.5 / Phi-4 Mini}} \newline \textit{(Microsoft)} & Open Weight & 3.8B \newline (INT4 ONNX) & 3.0 GB -- 3.8 GB RAM & Snapdragon 8 Gen 3/Elite, Apple A17 Pro, 8GB+ RAM & \textbf{OnePlus 12 / iQOO 12 / iPhone 15 Pro} \newline \textit{(\$600 -- \$850)} & Offline complex math, multi-step structured reasoning, offline code parsing, local JSON tool calling. \\
+
+    \textbf{\href{https://github.com/facebookresearch/MobileLLM}{MobileLLM / Pro}} \newline \textit{(Meta Research)} & Open Weight & 125M / 350M / 1B \newline (INT4 / INT8) & 0.4 GB -- 1.2 GB RAM & Low-power mobile CPU / Wearable SoC, 2GB--4GB RAM & \textbf{Entry-level 4G/5G phones / Smart Wearables} \newline \textit{(\$100 -- \$200)} & Real-time text parsing, ambient voice commands, ultra-low battery consumption text manipulation. \\
+
+    \textbf{\href{https://desertant.com/}{Desert Ant Micro-SDKs}} \newline \textit{(Desert Ant Labs)} & Commercial SDK & 2M -- 400M \newline (Custom Quantized) & 50 MB -- 500 MB RAM & Native iOS Core ML / Android LiteRT runtime & \textbf{Any modern smartphone} \newline \textit{(iOS 15+ / Android 10+, \$100+)} & Sub-millisecond specialized micro-tasks: local PII redaction (Redact), offline speech-to-text (Voz), photo scoring (Eye). \\
+
+    \textbf{\href{https://aihub.qualcomm.com/models/whisper_tiny}{Whisper Tiny / Base}} \newline \textit{(OpenAI / CTranslate2)} & Open Weight & 39M -- 74M \newline (INT8 / FP16) & 150 MB -- 400 MB RAM & Standard Mobile CPU / GPU, 2GB+ total RAM & \textbf{Legacy / Mid-range phones} \newline \textit{(e.g., Pixel 6a, Galaxy A54, \$200 -- \$350)} & Completely offline continuous voice-to-text dictation, offline meeting transcriptions, voice notes. \\
+
+    \textbf{\href{https://picovoice.ai/}{Picovoice Porcupine}} \newline \textit{(Picovoice)} & Commercial SDK & $<$10M \newline (Micro-Weights) & $<$50 MB RAM & Low-power DSP / Mobile CPU, negligible RAM & \textbf{Any smartphone or IoT device} \newline \textit{(\$50 -- \$150)} & Always-on wake-word activation, offline voice intent classification without continuous battery drain. \\
+
+    \textbf{\href{https://demos.liquid.ai/}{Liquid LFM2 / LFM2.5}} \newline \textit{(Liquid AI)} & Open Weight & 230M / 350M / 1.2B / 2.6B \newline (INT4 / GGUF) & 0.3 GB -- 2.2 GB RAM & Octa-core CPU / Mobile NPU, 4GB--8GB RAM & \textbf{Mid-range to Flagship Android / iOS} \newline \textit{(\$200 -- \$700)} & High-throughput on-device reasoning, long-context text processing, offline tool calling, extremely low memory footprint. \\
+
+    \textbf{\href{https://huggingface.co/nvidia/Mistral-NeMo-Minitron-8B-Base}{Mistral NeMo 8B}} \newline \textit{(Mistral AI / NVIDIA)} & Open Weight & 8B \newline (INT3 / INT4 GGUF) & 6.0 GB -- 7.5 GB RAM & Snapdragon 8 Gen 2/3/Elite, Apple A17 Pro/A18, 12GB--16GB RAM & \textbf{Flagship Handsets} \newline \textit{(e.g., OnePlus 12, S24 Ultra, iPhone 16 Pro, \$800 -- \$1200+)} & High-accuracy offline coding, long-form multilingual reasoning, complex enterprise function calling on high-ram phones. \\
+
+    \hline
+\end{longtable}
+
+\end{document}
