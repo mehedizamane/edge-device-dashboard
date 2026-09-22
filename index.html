@@ -4,31 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="A practical landscape of current on-device AI models for smartphones." />
-    <title>Edge Atlas — On-device AI models</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <title>Edge Models — On-device AI models</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <main>
-      <nav><a class="brand" href="#top">EDGE<span>ATLAS</span></a><span class="nav-note">On-device AI · 2026 field guide</span><a class="source-link" href="#catalog">Explore ↓</a></nav>
+      <nav><a class="brand" href="#top"><i>◆</i> Edge Models</a><span class="nav-note">A practical on-device AI field guide</span><a class="source-link" href="#catalog">Browse catalog ↓</a></nav>
       <section class="hero" id="top">
-        <p class="eyebrow">A practical model landscape</p>
-        <h1>AI that stays<br /><em>in your pocket.</em></h1>
-        <p class="intro">Compare the models, runtimes, and phone requirements behind private, offline intelligence on modern devices.</p>
+        <p class="eyebrow">On-device AI, explained</p>
+        <h1>The edge-model<br /><em>landscape.</em></h1>
+        <p class="intro">A living guide to the models, runtimes, and phone requirements behind private, offline intelligence.</p>
+        <div class="hero-links"><a href="#catalog">⌕ Explore models</a><a href="#hardware">▣ Hardware guide</a><a href="main.tex">⌁ Source review</a></div>
         <div class="hero-stats" id="heroStats"></div>
       </section>
       <section class="explorer" id="catalog" aria-label="Model explorer">
-        <div class="section-heading"><div><p class="eyebrow">Explore the catalog</p><h2>Find a fit for your device</h2></div><p id="resultCount" class="result-count"></p></div>
+        <div class="section-heading"><div><p class="eyebrow">Model catalog</p><h2>Compare on-device models</h2></div><p id="resultCount" class="result-count"></p></div>
         <div class="controls">
           <label class="search"><span>⌕</span><input id="search" type="search" placeholder="Search model, provider, or use case" /></label>
           <div class="filters" id="filters"><button class="filter active" data-filter="all">All models</button><button class="filter" data-filter="Open Weight">Open weight</button><button class="filter" data-filter="Closed (OS)">OS built-in</button><button class="filter" data-filter="Commercial SDK">SDK</button></div>
         </div>
         <div class="table-wrap"><table><thead><tr><th>Model</th><th>Access</th><th>Mobile profile</th><th>Memory</th><th>Best suited phone</th><th>Offline superpower</th></tr></thead><tbody id="modelRows"></tbody></table></div>
       </section>
-      <section class="guide"><div><p class="eyebrow">Hardware reality check</p><h2>Choose by available<br />memory, not hype.</h2></div><div class="tiers"><article><span class="tier-number">01</span><h3>2–4 GB RAM</h3><p>Specialists and tiny language models for wake words, transcription, and utility tasks.</p><b>SmolLM2 · MobileLLM · Whisper</b></article><article><span class="tier-number">02</span><h3>6–8 GB RAM</h3><p>The practical sweet spot for capable private assistants and multilingual workflows.</p><b>Llama 3.2 · Qwen · Gemma · Tiny Aya</b></article><article><span class="tier-number">03</span><h3>12 GB+ RAM</h3><p>Long context, more involved reasoning, and heavier enterprise workflows on flagships.</p><b>Phi · Mistral NeMo</b></article></div></section>
-      <footer><span>EDGE ATLAS</span><p>Model data synthesized from the accompanying literature review. Resource estimates vary by runtime, context window, and device.</p><a href="#top">Back to top ↑</a></footer>
+      <section class="guide" id="hardware"><div><p class="eyebrow">Hardware guide</p><h2>Start with the<br />memory you have.</h2><p class="guide-copy">Memory is the practical limiter for local inference. Use these tiers to narrow the catalog before comparing capabilities.</p></div><div class="tiers"><article><span class="tier-number">01</span><h3>2–4 GB RAM</h3><p>Specialists and tiny language models for wake words, transcription, and utility tasks.</p><b>SmolLM2 · MobileLLM · Whisper</b></article><article><span class="tier-number">02</span><h3>6–8 GB RAM</h3><p>The practical sweet spot for capable private assistants and multilingual workflows.</p><b>Llama 3.2 · Qwen · Gemma · Tiny Aya</b></article><article><span class="tier-number">03</span><h3>12 GB+ RAM</h3><p>Long context, more involved reasoning, and heavier enterprise workflows on flagships.</p><b>Phi · Mistral NeMo</b></article></div></section>
+      <footer><span>EDGE MODELS</span><p>Model data synthesized from the accompanying literature review. Resource estimates vary by runtime, context window, and device.</p><a href="#top">Back to top ↑</a></footer>
     </main>
     <script src="app.js"></script>
   </body>

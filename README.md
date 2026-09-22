@@ -1,4 +1,4 @@
-# Edge Atlas
+# Edge Models
 
 A static, responsive dashboard that turns `main.tex` into a searchable comparison of on-device AI models for smartphones.
 
