@@ -99,20 +99,6 @@ python -m http.server 8000
 
 Then open `http://127.0.0.1:8000/`. Editing `index.html`, `styles.css`, or `app.js` is enough to update the site.
 
-### Publishing
-
-GitHub Pages deploys the `main` branch from the repository root. After merging a static-site change, GitHub Actions publishes the update automatically. The deployed URL is:
-
-`https://mehedizamane.github.io/edge-device-dashboard/`
-
-## Project status and contributions
-
-This is a living reference. Useful contributions include corrections backed by primary sources, updates to model cards or benchmark protocols, additional runtime-specific measurements, and clearer documentation of licensing or hardware constraints. Please open an issue or pull request with a direct citation and the exact model variant, precision, runtime, benchmark split, and evaluation protocol.
-
-## Privacy note
-
-The private literature-review TeX file used during the project’s synthesis is deliberately **not included** in this public repository. This repository publishes the dashboard and links to public primary sources only.
-
 ## Acknowledgment
 
 The dashboard format draws inspiration from research-facing benchmark and model repositories that pair a concise project overview with explicit evaluation context, reproducibility guidance, and source-linked artifacts, including [SciConBench](https://sciconbench.cs.princeton.edu/) and [OLMo](https://github.com/allenai/OLMo).
